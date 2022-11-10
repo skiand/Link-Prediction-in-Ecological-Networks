@@ -13,7 +13,6 @@ The chosen dataset is the the GATEWAy database which is one of the largest colle
 # Methodology
 
 ![](methodology_image.png)
-
 We use an algorithm called DeepWalk to create a latent space representation of each graph, a process that generates node embeddings. These embeddings are created using only the structure of the graph and are then used for training the algorithm. It should be noted that we only use the node embeddings as input for the link prediction, and no other node features were used. On the right we can see a map of the chosen webs.
 
 In order to link the samples to the embeddings, we test four different Binary Operators. Each graph is tested with each operator and the best performing one is chosen. For our classifier, our choice is the LogisticRegressionCV, as implemented in the sci-kit library. This classifier is preferred due to its built-in application of cross-validation. To determine the optimal values, the model was tested with different initial values for hyperpameters concerning the DeepWalk algorithm and the classifier. Using this process, it was determined that a low number of walks and a low number of dimensions should be passed to DeepWalk, with the other hyperparameters having negligible impact.
