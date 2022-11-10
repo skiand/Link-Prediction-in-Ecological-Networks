@@ -1,0 +1,8 @@
+Locale,ROC AUC score,Binary operator used
+Weddell Sea,0.8327601067937129,Hadamard
+Chesapeake Bay,0.607117384366331,Hadamard
+Lough Hyne,0.7700684560628279,Hadamard
+Carpinteria,0.6483954560260118,Hadamard
+FloridaIslandE3,0.6472382901694942,Hadamard
+FloridaIslandE1,0.5961180380178306,Average
+Caribbean Reef,0.5934268365413177,Average
