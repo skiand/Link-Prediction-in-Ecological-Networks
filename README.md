@@ -7,15 +7,17 @@ This project evaluates a method of implementing link prediction on food webs. A 
 # Dataset
 
 ![](foodwebs.png)
-The chosen dataset is the the GATEWAy database which is one of the largest collection of ecological networks, containing 290 food webs. It contains pairs of predator-prey species, and it includes characteristics such as species' length, mass, geographic location and others. We use pairs of predators and preys as nodes, with their consumption being the edge between them, resulting in multiple directed graphs, one for each web. Finally, we select only seven of the biggest webs as opposed to a composite graph of all the webs. This is done for a few reasons. The primary reason is that, while some webs do have species in common, in reality, it is unlikely that the webs interact, whether at present or in the future, since many of them are located tens of thousands of kilometers apart. Thus, a combined web with biomes from all across the world makes little sense. As for the food webs tested, they were selected chiefly for their size, having some of the largest number of nodes and samples in the dataset, which will be helpful in training the model. 
+
+
+The chosen dataset is the the GATEWAy database which is one of the largest collection of ecological networks, containing 290 food webs. It contains pairs of predator-prey species, and it includes characteristics such as species' length, mass, geographic location and others. We use pairs of predators and preys as nodes, with their consumption being the edge between them, resulting in multiple directed graphs, one for each web. Finally, we select only seven of the biggest webs as opposed to a composite graph of all the webs. This is done for a few reasons. The primary reason is that, while some webs do have species in common, in reality, it is unlikely that the webs interact, whether at present or in the future, since many of them are located tens of thousands of kilometers apart. Thus, a combined web with biomes from all across the world makes little sense. As for the food webs tested, they were selected chiefly for their size, having some of the largest number of nodes and samples in the dataset, which will be helpful in training the model.
 
 
 # Methodology
 
+We use an algorithm called DeepWalk to create a latent space representation of each graph, a process that generates node embeddings. These embeddings are created using only the structure of the graph and are then used for training the algorithm. It should be noted that we only use the node embeddings as input for the link prediction, and no other node features were used. On the right we can see a map of the chosen webs.
+
 ![](methodology_image.png)
 
-
-We use an algorithm called DeepWalk to create a latent space representation of each graph, a process that generates node embeddings. These embeddings are created using only the structure of the graph and are then used for training the algorithm. It should be noted that we only use the node embeddings as input for the link prediction, and no other node features were used. On the right we can see a map of the chosen webs.
 
 In order to link the samples to the embeddings, we test four different Binary Operators. Each graph is tested with each operator and the best performing one is chosen. For our classifier, our choice is the LogisticRegressionCV, as implemented in the sci-kit library. This classifier is preferred due to its built-in application of cross-validation. To determine the optimal values, the model was tested with different initial values for hyperpameters concerning the DeepWalk algorithm and the classifier. Using this process, it was determined that a low number of walks and a low number of dimensions should be passed to DeepWalk, with the other hyperparameters having negligible impact.
 
