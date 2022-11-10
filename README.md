@@ -28,6 +28,8 @@ Below is a diagram of the model implementation.
 # Results
 
 Below a table of the results. The ROC AUC scores, which is our metric of choice, results in an average of 67% across the tested webs. In addition, presented below are two representative ROC curves for the Weddell Sea and the Lough Hyne food webs.
+
+
 ![](results_image.png)
 
 
