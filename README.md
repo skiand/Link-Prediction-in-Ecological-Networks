@@ -49,3 +49,6 @@ Future research should investigate additional methods:
 
 In conclusion, when used together with node embeddings, our method can potentially achieve higher accuracies. Nevertheless, this will likely come at the cost of needing more computing resources, whereas the present model needs comparatively little computing power to train.
 
+
+# Appendix
+The `Main_Document.ipynb` file was used for the task of creating the link prediction algorithm and the `Data_Exploration.ipynb` file was used for the task of analysing the GATEWAy dataset and for generating visualisations. Refer to `Paper.pdf` for more details about this project. 
